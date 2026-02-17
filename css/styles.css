@@ -17,8 +17,8 @@ body {
 .title-section {
   margin-bottom: 3.75rem;
   position: fixed;
-  top: 47%;
-  left: 5rem;
+  top: 40%;
+  left: 6rem;
   z-index: 50;
   text-align: left;
 }
@@ -28,10 +28,9 @@ body {
   font-weight: bold;
   letter-spacing: 0.5rem;
   color: #ffffff;
-  text-shadow: 0 0 30px rgba(119, 112, 179, 0.6),
-               0 0 60px rgba(200, 162, 243, 0.3);
-  margin-bottom: 0;
-  animation: glitch 0.3s infinite;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4),
+               0 0 60px rgba(255, 255, 255, 0.2);
+  animation: glitch 1.5s infinite;
 }
 
 .glow-line {
@@ -101,8 +100,8 @@ body {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(0, 217, 255, 0.03) 1px, transparent 5px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.03) 1px, transparent 5px);
   background-size: 3.125rem 3.125rem;
   z-index: 1;
   pointer-events: none;
@@ -124,9 +123,9 @@ body {
   position: absolute;
   width: 0.25rem;
   height: 0.25rem;
-  background: #00ff88;
+  background: rgba(0, 217, 255, 0.03);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 255, 136, 0.8);
+  box-shadow: 0 0 10px rgba(0, 252, 105, 0.8);
   animation: float 15s infinite ease-in-out;
 }
 
@@ -148,15 +147,20 @@ body {
   animation-delay: 10s;
 }
 
+.mod-img{
+  border-radius: 2rem 2rem 2rem 2rem;
+  max-width: 7rem;
+}
+
 /* Animations */
 @keyframes glitch {
   0%, 100% {
-    text-shadow: 0 0 30px rgba(0, 255, 136, 0.6),
-                 0 0 60px rgba(0, 255, 136, 0.3);
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.4),
+                 0 0 60px rgba(255, 255, 255, 0.2);
   }
   50% {
-    text-shadow: 0 0 20px rgba(0, 255, 136, 0.4),
-                 0 0 40px rgba(0, 255, 136, 0.2);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3),
+                 0 0 40px rgba(255, 255, 255, 0.15);
   }
 }
 
@@ -205,22 +209,35 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .title-section {
-    top: 47%;
-    left: 1.25rem;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 50;
   }
 
   .main-title {
     font-size: 1.75rem;
     letter-spacing: 0.25rem;
+    animation: none;
   }
 
   .glow-line {
     width: 7rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .bottom-left-menu {
     top: 52%;
-    left: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .vertical-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .menu-link {
